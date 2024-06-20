@@ -6,7 +6,18 @@
 */
 
 html {
-  font-family: sans-serif;
+  font-family: Montserrat;
 }
 
 /* Your CSS below here */
+.cool-box{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
