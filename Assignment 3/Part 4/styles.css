@@ -53,9 +53,6 @@ body {
     justify-content: space-between;
   }
   
-  nav ul li{
-    flex-shrink: 0px;
-  }
 
   nav a {
     color: #fff;
