@@ -50,3 +50,11 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+html {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+}
+
+h1{
+  font-family: "Noto Sans", sans-serif;
+}
