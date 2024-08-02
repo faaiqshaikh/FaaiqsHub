@@ -103,3 +103,20 @@ function loop() {
 }
 
 loop();
+
+// shape class with only constructor
+class Shape {
+  constructor(x, y, velX, velY) {
+      this.x = x;
+      this.y = y;
+      this.velX = velX;
+      this.velY = velY;
+  }
+}
+// evil circle
+class EvilCircle extends Shape {
+  constructor(x, y) {
+      super(x, y, 20, 20);
+      this.color = 'white';
+      this.size = 10;
+}
