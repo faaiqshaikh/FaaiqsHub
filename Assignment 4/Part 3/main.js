@@ -20,6 +20,7 @@ function randomRGB() {
 
 // class for balls
 class Ball {
+  // constructor for this class
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
     this.y = y;
@@ -36,7 +37,7 @@ class Ball {
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
-
+  // update the data of the ball
   update() {
     if ((this.x + this.size) >= width) {
       this.velX = -(this.velX);
@@ -58,15 +59,31 @@ class Ball {
     this.y += this.velY;
   }
 
+  //detect collision between balls
+  collisionDetect() {
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+  
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
+
 }
 
+// create an instance for the ball class and call its members
 const testBall = new Ball(50, 100, 4, 4, "blue", 10);
 testBall.x;
 testBall.size;
 testBall.color;
 testBall.draw();
 
-//
+// animate the balls
 const balls = [];
 
 while (balls.length < 25) {
@@ -92,8 +109,13 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect();
   }
 
   requestAnimationFrame(loop);
 }
+
+loop();
+
+
 
