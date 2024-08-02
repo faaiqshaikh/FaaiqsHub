@@ -26,6 +26,7 @@ class Ball {
     this.velY = velY;
     this.color = color;
     this.size = size;
+    this.exists = true; // Track whether the ball exists
   }
 
   draw() {
@@ -58,11 +59,11 @@ class Ball {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
+  
         if (distance < this.size + ball.size) {
           ball.color = this.color = randomRGB();
         }
@@ -89,15 +90,24 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+// instance for evilcircle
+const evilCircle = new EvilCircle(random(0, width), random(0, height));
+
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists) {           // will make sure if the ball exist
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
   }
+  // call evil circle's method
+  evilCircle.draw(ctx);
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
 
   requestAnimationFrame(loop);
 }
@@ -113,6 +123,7 @@ class Shape {
       this.velY = velY;
   }
 }
+
 // evil circle
 class EvilCircle extends Shape {
   constructor(x, y) {
@@ -184,3 +195,6 @@ class EvilCircle extends Shape {
     }
 
 }
+
+
+
