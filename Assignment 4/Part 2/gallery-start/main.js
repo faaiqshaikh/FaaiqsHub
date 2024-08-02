@@ -10,10 +10,11 @@ let filenames = ['images/pic1.jpg','images/pic2.jpg','images/pic3.jpg','images/p
 let alt_filenames = ['pic1.jpg','pic2.jpg','pic3.jpg','pic4.jpg','pic5.jpg'];
 
 /* Looping through images */
-
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+for(let i = 0; i < filenames.length; i++){
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', filenames[i]);
+    newImage.setAttribute('alt', alt_filenames[i]);
+    thumbBar.appendChild(newImage);
+}
 
 /* Wiring up the Darken/Lighten button */
