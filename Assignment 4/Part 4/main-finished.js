@@ -5,7 +5,9 @@ const ctx = canvas.getContext("2d");
 
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
-
+// get access to the paragraph to display count
+const ballCountParagraph = document.getElementById('ballCount');
+let ballCount = 0;
 // function to generate random number
 
 function random(min, max) {
@@ -88,31 +90,10 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  // increment ball count
+  ballCount++;
+  ballCountParagraph.textContent = `Ball count: ${ballCount}`;
 }
-
-// instance for evilcircle
-const evilCircle = new EvilCircle(random(0, width), random(0, height));
-
-function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-  ctx.fillRect(0, 0, width, height);
-
-  for (const ball of balls) {
-    if (ball.exists) {           // will make sure if the ball exist
-      ball.draw();
-      ball.update();
-      ball.collisionDetect();
-    }
-  }
-  // call evil circle's method
-  evilCircle.draw(ctx);
-  evilCircle.checkBounds();
-  evilCircle.collisionDetect();
-
-  requestAnimationFrame(loop);
-}
-
-loop();
 
 // shape class with only constructor
 class Shape {
@@ -189,12 +170,47 @@ class EvilCircle extends Shape {
 
                 if (distance < this.size + ball.size) {
                     ball.exists = false; // erase the ball
+                    // decrement the ball count
+                    ballCount--;
+                    ballCountParagraph.textContent = `Ball count: ${ballCount}`;
                 }
             }
         }
     }
 
 }
+
+
+// instance for evilcircle
+const evilCircle = new EvilCircle(random(0, width), random(0, height));
+
+// function to keep all balls moving
+function loop() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    if (ball.exists) {           // will make sure if the ball exist
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
+  }
+  // call evil circle's method
+  evilCircle.draw(ctx);
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
+
+  requestAnimationFrame(loop);
+}
+
+loop();
+
+
+
+
+
+
 
 
 
