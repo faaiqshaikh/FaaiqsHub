@@ -119,4 +119,68 @@ class EvilCircle extends Shape {
       super(x, y, 20, 20);
       this.color = 'white';
       this.size = 10;
+
+      // move the circle around the screen
+      window.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case "a":
+            this.x -= this.velX;
+            break;
+          case "d":
+            this.x += this.velX;
+            break;
+          case "w":
+            this.y -= this.velY;
+            break;
+          case "s":
+            this.y += this.velY;
+            break;
+        }
+      });
+    }
+      // draw method to draw the object instance
+      draw(context) {
+        context.beginPath();
+        context.arc(this.x, this.y, this.size, 0, 2 * Math.PI); 
+        context.strokeStyle = this.color; 
+        context.lineWidth = 3; 
+        context.stroke(); 
+      }
+
+      // look to see whether the evil circle is going to go off the edge of the screen
+      checkBounds(){
+        if (this.x + this.size >= width) {
+          this.x = -Math.abs(this.x);
+        }
+    
+        if (this.x - this.size <= 0) {
+          this.x = Math.abs(this.x);
+        }
+    
+        if (this.y + this.size >= height) {
+          this.y = -Math.abs(this.y);
+        }
+    
+        if (this.y - this.size <= 0) {
+          this.y = Math.abs(this.y);
+        }
+    
+      }
+
+      //detect collision
+      collisionDetect() {
+        for (const ball of balls) {
+            // Check if the ball exists
+            if (ball.exists) {
+                const dx = this.x - ball.x;
+                const dy = this.y - ball.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < this.size + ball.size) {
+                    ball.exists = false; // erase the ball
+                }
+            }
+        }
+    }
+
 }
