@@ -24,8 +24,6 @@ showHideBtn.onclick = function() {
 };
 // Button keydown event for Enter key
 showHideBtn.addEventListener('keydown', function(e) {
-  console.log('Key pressed:', e.key); // Debugging statement
-  console.log('Key code:', e.keyCode); // Debugging statement
   if (e.key === 'Enter' || e.keyCode === 13) {
     toggleComments();
   }
