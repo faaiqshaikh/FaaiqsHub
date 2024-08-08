@@ -22,9 +22,12 @@ This web page demonstrates .
   </head>
 
   <body>
-    <div class="header">
+    <head>    
+      <div class="header">
       <font size="7">Welcome to our wildlife website</font>
-    </div>
+      </div>
+  </head>
+
 
     <nav class="nav">
       <ul>
@@ -35,6 +38,7 @@ This web page demonstrates .
       </ul>
 
       <form class="search">
+        <label for="search-query" class="visually-hidden">Search query</label>
         <input type="search" name="q" placeholder="Search query">
         <input type="submit" value="Go!">
       </form>
@@ -42,8 +46,11 @@ This web page demonstrates .
 
     <main>
       <article>
+        <header>
         <font size="6">The trouble with Bears</font>
         <br><br>
+      </header>
+      <section>
         <p>By Evan Wild
         <br><br>
         Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.
@@ -86,19 +93,29 @@ This web page demonstrates .
             </tr>
           </tbody>
         </table>
-
+      </section>
+      <section>
         <font size="5">Habitats and Eating habits</font>
         <br><br>
         <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.
         <br><br></p>
-        <img src="media/wild-bear.jpg" alt="A wild bear in its natural habitat"/>
-        <br><br>
+        <figure>
+          <img src="media/wild-bear.jpg" alt="A wild bear in its natural habitat"/>
+          <figcaption>A wild bear in its natural habitat.</figcaption>
+        </figure>
+          <br><br>
         <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.
         </p><br><br>
-        <img src="media/urban-bear.jpg" alt="An urban bear in behind the bars in Zoo">
+        <figure>
+           <img src="media/urban-bear.jpg" alt="An urban bear in behind the bars in Zoo">
+          <figcaption>An urban bear behind bars in a zoo.</figcaption>
+      </figure>
         <br><br>
         <p>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.
-        </p><br><br>
+        </p>
+      </section>
+      <section>
+        <br><br>
         <font size="5">Mating rituals</font>
         <br><br>
         <p>Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.
@@ -108,9 +125,9 @@ This web page demonstrates .
         <audio controls>
           <source src="media/bear.mp3" type="audio/mp3">
           <source src="media/bear.ogg" type="audio/ogg">
-          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+          <p>It looks like your browser doesn't support HTML5 audio players. You can <a href="media/bear.mp3" download>download the audio file</a> instead.</p>
         </audio>
-
+      </section>
         <aside>
 
           <font size="5">About the author</font>
@@ -120,8 +137,9 @@ This web page demonstrates .
         <p>  He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.
         </p>
         </aside>
+
         <section class="comments">
-          <div class="show-hide">Show comments</div>
+          <div class="show-hide" role="button" tabindex="0" aria-pressed="false">Show comments</div>
 
           <div class="comment-wrapper">
 
@@ -129,11 +147,11 @@ This web page demonstrates .
 
             <form class="comment-form">
               <div class="flex-pair">
-                Your name:
+                <label for="name">Your name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name">
               </div>
               <div class="flex-pair">
-                Your comment:
+                <label for name="comment">Your comment:</label>
                 <input type="text" name="comment" id="comment" placeholder="Enter your comment">
               </div>
               <div>
@@ -159,7 +177,7 @@ This web page demonstrates .
         </section>
       </article>
 
-      <div class="secondary">
+      <aside class="secondary">
         <font size="6">Related</font>
 
         <ul>
@@ -169,7 +187,7 @@ This web page demonstrates .
           <li><a href="#">The trouble with Octopi</a></li>
           <li><a href="#">The trouble with Lemurs</a></li>
         </ul>
-      </div>
+      </aside>
     </main>
 
     <footer>
@@ -177,6 +195,7 @@ This web page demonstrates .
     </footer>
 
     <script src="main.js"></script>
+
 
   </body>
 </html>

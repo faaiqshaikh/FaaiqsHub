@@ -195,13 +195,14 @@ audio {
 
 .comment-form .flex-pair {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
   padding: 0 3rem 1rem;
 }
 
 .comment-form label {
-  align-self: center;
-  flex: 2;
-  text-align: right;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .comment-form input {
@@ -226,9 +227,15 @@ audio {
 }
 
 .comment-form input[type="submit"] {
-  width: 30%;
-  display: block;
-  margin: 0 auto;
+  margin-top: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
 .comment-container {
@@ -247,4 +254,23 @@ audio {
 
 .comment-container li p:nth-child(2) {
   flex: 5;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="submit"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
