@@ -22,5 +22,5 @@ This project demonstrates an interactive **bouncing balls** animation where the 
 
 
 ## How to Run:
-1. **Let's have fun!**:
-   ```click on https://faaiqshaikh.github.io/WebDevelopment/Bouncing%20Balls/index.html```
+1. **Let's have fun!**: follow this url or paste it in other window [https://faaiqshaikh.github.io/WebDevelopment/Bouncing%20Balls/Main]
+
