@@ -3,141 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Repository Index</title>
+  <title>Faaiq's Hub</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto:700');
-    @keyframes showTopText {
-      0% { transform: translate3d(0, 100%, 0); }
-      40%, 60% { transform: translate3d(0, 50%, 0); }
-      100% { transform: translate3d(0, 0, 0); }
-    }
-    @keyframes showBottomText {
-      0% { transform: translate3d(0, -100%, 0); }
-      100% { transform: translate3d(0, 20%, 0); }
-    }
-    .animated-title {
-      color: #222;
-      font-family: Roboto, Arial, sans-serif;
-      height: 90vmin;
-      position: absolute;
-      width: 90vmin;
-      background-color: #767676;
-      padding: 50px;
-    }
-    .animated-title > div {
-      height: 50%;
-      overflow: hidden;
-      position: absolute;
-      width: 100%;
-    }
-    .animated-title > div div {
-      font-size: 12vmin;
-      padding: 2vmin 0;
-      position: absolute;
-    }
-    .animated-title > div div span {
-      display: block;
-    }
-    .animated-title > div.text-top {
-      border-bottom: 1vmin solid #000;
-      transform: translate(0, 0);
-    }
-    .animated-title > div.text-top div {
-      animation: showTopText 1s;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards;
-      bottom: 0;
-    }
-    .animated-title > div.text-top div span:first-child {
-      color: #767676;
-    }
-    .animated-title > div.text-bottom {
-      bottom: 0;
-    }
-    .animated-title > div.text-bottom div {
-      animation: showBottomText 0.5s;
-      animation-delay: 1.75s;
-      animation-fill-mode: forwards;
-      top: 0;
-      transform: translate(0, -100%);
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropbtn {
-        min-width: 20%;
-        size: fixed;
-        height: fit-content; 
-        padding: 20px 40px 20px 40px;
-        font-family: Roboto, Arial, sans-serif;
-        font-size: 3vmin;
-        background-color: #000000; 
-        color: #f9f9f9; 
-        border-radius: 50ex;
-        border: 2px solid #000;
-        cursor: pointer;
-        transition: transform 2s;
-    }
-    .dropbtn:hover{
-        background-color: #767676; 
-        color: #f9f9f9; 
-        border: 2px solid #f9f9f9;   
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 50px;
-      box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-    .dropdown-content a {
-      color: black;
-      font-size: large;
-      padding: 12px 16px;
-      text-decoration: none;
-      border-bottom: .5px solid #767676;
-      display: block;
-      min-width: 60px;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    .centered {
-    background-color: #eee;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    }
   </style>
 </head>
-<body>
-   <div class="centered"> 
-    <div class="animated-title">
-        <div class="text-top" style="align-items: center;">
-            
-          <div>
-            <span>Exploring</span>
-            <span>Faaiq's Github</span>
-          </div>
-          
-        </div>
-        <div class="text-bottom">
-          <div class="dropdown">
-            <button class="dropbtn">My Work</button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-            </div>
-          </div>
-        </div>
+<body> 
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+		<defs>
+			<linearGradient id="bg">
+				<stop offset="0%" style="stop-color:rgba(130, 158, 249, 0.06)"></stop>
+				<stop offset="50%" style="stop-color:rgba(140, 183, 208, 0.6)"></stop>
+				<stop offset="100%" style="stop-color:rgba(115, 209, 72, 0.2)"></stop>
+			</linearGradient>
+			<path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+	s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+		</defs>
+		<g>
+			<use xlink:href='#wave' opacity=".3">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="10s"
+          calcMode="spline"
+          values="270 230; -334 180; 270 230"
+          keyTimes="0; .5; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+			<use xlink:href='#wave' opacity=".6">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="8s"
+          calcMode="spline"
+          values="-270 230;243 220;-270 230"
+          keyTimes="0; .6; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+			<use xlink:href='#wave' opacty=".9">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="6s"
+          calcMode="spline"
+          values="0 230;-140 200;0 230"
+          keyTimes="0; .4; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+		</g>
+	</svg> 
+  <div class="animated-title">
+    <div class="text-top">
+      <div>
+        <span>Explore,</span><br>
+        <span>Faaiq's Github</span>
       </div>
     </div>
+    <div class="text-bottom">
+      <div class="dropdown">
+        <button class="dropbtn">My Projects</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+        </div> 
+      </div>
+      
+    </div>
+  </div>
+  
 </body>
 </html>
