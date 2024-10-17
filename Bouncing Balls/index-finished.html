@@ -1,22 +1,39 @@
-<!--
-	Name: Mohammedfaiq Shaikh
-	File: index.html
-	Date: 01 Aug 2024
-	This webpage demonstrates adding features to the bouncing balls demo from part-3.
--->
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Bouncing balls</title>
+    <link rel="icon" href="ball.png" type="image/png">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <p id="ballCount"></p>
+    <p id="ballCount">Balls Left: 10</p>
+    <h1>Bouncing Balls Game</h1>
     <canvas></canvas>
 
+    <!-- Modal Trigger -->
+    <button id="openModalButton">Show Instructions</button>
+
+    <!-- Modal -->
+    <div id="gameInstructionsModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        
+        <h2>How to Play</h2>
+        <p>
+          Welcome to the Bouncing Balls game! Here's how to play:
+        </p>
+        <ul>
+          <li>Use the <strong>W, A, S, D</strong> keys to move the white "Evil Circle".</li>
+          <li>Capture as many bouncing balls as you can by colliding with them.</li>
+          <li>Watch the ball count at the top as you eliminate the balls.</li>
+        </ul>
+        
+      </div>
+    </div>
+    
     <script src="main-finished.js"></script>
   </body>
 </html>
