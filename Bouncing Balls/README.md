@@ -23,5 +23,4 @@ This project demonstrates an interactive **bouncing balls** animation where the 
 
 ## How to Run:
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/faaiqshaikh/WebDevelopment/Bouncing%20Balls
+   ```click on https://faaiqshaikh.github.io/WebDevelopment/Bouncing%20Balls/index.html```
